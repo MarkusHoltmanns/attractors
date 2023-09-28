@@ -17,15 +17,17 @@ plt.style.use('dark_background')
 ax = plt.figure(dpi=200).add_subplot(projection='3d')
 dt = 0.05 # best not go bigger than 0.1
 num_steps = 10000
-particlenumber = 20
+particlenumber = 100
 xyzs = np.empty((num_steps + 1, 3))
 for particles in range(particlenumber):
+    print("Calculating attractor shape for particle nr. ",particles+1)
     x_vals = []
     y_vals = []
     z_vals = []    
     xyzs[0] = (random.uniform(-1, 1),random.uniform(-1, 1),random.uniform(-1, 1)) 
-    cmap = (random.uniform(0.3, 1), random.uniform(0.3, 1), random.uniform(0.3, 1))
-    print (xyzs[0])
+    #cmap = hsv #(random.uniform(0.3, 1), random.uniform(0.3, 1), random.uniform(0.3, 1))
+    cmap = plt.cm.hsv((2*particles+1)/(2*particlenumber))
+    #print (xyzs[0])
     for i in range(num_steps):
         xyzs[i + 1] = xyzs[i] + aizawa(xyzs[i]) * dt
         if i > 50:

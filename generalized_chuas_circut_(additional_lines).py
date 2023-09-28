@@ -37,7 +37,7 @@ ax = plt.figure(dpi=200).add_subplot(projection='3d')
 dt = 0.01
 num_steps = 10000
 
-particlenumber = 20
+particlenumber = 100
 for particles in range(particlenumber):
     x_vals = []
     y_vals = []
