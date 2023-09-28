@@ -49,10 +49,9 @@ for particles in range(particlenumber):
     
     for i in range(num_steps):
         xyzs[i + 1] = xyzs[i] + chua(xyzs[i]) * dt
-    for k in range(num_steps):
-        x_vals.append(xyzs[k][0])
-        y_vals.append(xyzs[k][1])
-        z_vals.append(xyzs[k][2])
+        x_vals.append(xyzs[i][0])
+        y_vals.append(xyzs[i][1])
+        z_vals.append(xyzs[i][2])
     plt.plot(x_vals,y_vals, z_vals,c=cmap, linewidth=0.1)
 
 # Plot
